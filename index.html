@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maggie Shayne | Official Author Page</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap"
+    rel="stylesheet">
 
   <style>
     /* --- Reset & Base --- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Lora', serif;
@@ -25,7 +32,9 @@
       padding: 0 20px;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: 'Playfair Display', serif;
       letter-spacing: 0.3px;
       color: #4a2a2a;
@@ -68,21 +77,43 @@
     }
 
     /* --- Hero --- */
+    /* --- Hero --- */
     .hero {
       width: 100%;
-      max-height: 420px;
+      height: 50vh;
+      /* full viewport height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow: hidden;
-      border-radius: 18px;
-      margin-bottom: 40px;
       position: relative;
+      background: #f6f1ee;
+      /* soft background behind image */
+      border-radius: 26px;
     }
 
     .hero img {
-      width: 100%;
-      object-fit: cover;
-      filter: brightness(92%) saturate(1.1);
-      transform: scale(1.03);
-      animation: slowZoom 12s ease-in-out infinite alternate;
+      width: 50%;
+      height: 100%;
+      object-fit: contain;
+      /* shows full image without cropping */
+      object-position: center;
+      border-radius: 18px;
+      border: 15px solid #fff;
+      animation: slowZoom 15s ease-in-out infinite alternate;
+      filter: brightness(95%) saturate(1.05);
+
+    }
+
+    /* Smooth zoom animation */
+    @keyframes slowZoom {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.05);
+      }
     }
 
     /* --- Book Card --- */
@@ -158,13 +189,25 @@
 
     /* --- Motion --- */
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes slowZoom {
-      from { transform: scale(1.03); }
-      to { transform: scale(1.08); }
+      from {
+        transform: scale(1.03);
+      }
+
+      to {
+        transform: scale(1.08);
+      }
     }
 
     [data-animate] {
@@ -208,10 +251,13 @@
     </div>
 
     <h1 data-animate>Maggie Shayne</h1>
-    <p data-animate style="text-align:center; font-style:italic; font-size:1.1rem;">"Stories that touch the heart, thrill the soul, and linger long after the last page."</p>
+    <p data-animate style="text-align:center; font-style:italic; font-size:1.1rem;">"Stories that touch the heart,
+      thrill the soul, and linger long after the last page."</p>
 
     <h2 data-animate>About Maggie</h2>
-    <p data-animate>Maggie Shayne is a New York Times and USA Today bestselling author whose stories of love, mystery, and the supernatural have touched millions of readers. With over 70 novels, she weaves the human experience through magic, passion, and timeless emotion.</p>
+    <p data-animate>Maggie Shayne is a New York Times and USA Today bestselling author whose stories of love, mystery,
+      and the supernatural have touched millions of readers. With over 70 novels, she weaves the human experience
+      through magic, passion, and timeless emotion.</p>
 
     <h2 data-animate>Featured Books</h2>
 
@@ -224,7 +270,8 @@
         <h3>Twilight Guardians</h3>
         <p>The first in the Immortal Witch series — where eternal love battles against the dark forces of time.</p>
         <div class="button-group">
-          <a href="https://www.amazon.sg/Twilight-Guardians-Wings-Night-Reborn/dp/1500762954" target="_blank">Read More</a>
+          <a href="https://www.amazon.sg/Twilight-Guardians-Wings-Night-Reborn/dp/1500762954" target="_blank">Read
+            More</a>
         </div>
       </div>
     </div>
@@ -236,9 +283,11 @@
       </div>
       <div class="book-content">
         <h3>Sleep With the Lights On</h3>
-        <p>A haunting story of courage and second chances. A blind woman's world turns upside down when a killer begins to hunt her.</p>
+        <p>A haunting story of courage and second chances. A blind woman's world turns upside down when a killer begins
+          to hunt her.</p>
         <div class="button-group">
-          <a href="https://www.amazon.com/Sleep-Lights-Brown-Luca-Novel-ebook/dp/B00CN0N7LO/" target="_blank">Read More</a>
+          <a href="https://www.amazon.com/Sleep-Lights-Brown-Luca-Novel-ebook/dp/B00CN0N7LO/" target="_blank">Read
+            More</a>
         </div>
       </div>
     </div>
@@ -252,7 +301,8 @@
         <h3>The Littlest Cowboy</h3>
         <p>A heartwarming tale from the Texas Brand series — family, love, and redemption in the wide open plains.</p>
         <div class="button-group">
-          <a href="https://www.amazon.com/Littlest-Cowboy-Texas-Brands-Book-ebook/dp/B0B8Q68J9V/" target="_blank">Read More</a>
+          <a href="https://www.amazon.com/Littlest-Cowboy-Texas-Brands-Book-ebook/dp/B0B8Q68J9V/" target="_blank">Read
+            More</a>
         </div>
       </div>
     </div>
@@ -272,8 +322,9 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, { threshold: 0.15 });
+    }, {threshold: 0.15});
     elements.forEach(el => observer.observe(el));
   </script>
 </body>
+
 </html>
