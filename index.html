@@ -1,16 +1,279 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maggie Shayne | Official Author Page</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Reset & Base --- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(180deg, #f6f1ee 0%, #fffaf8 100%);
+      color: #3a2a29;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    .site-wrapper {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.3px;
+      color: #4a2a2a;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 16px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 50px 0 20px;
+      color: #5b3630;
+      border-left: 4px solid #b57a6d;
+      padding-left: 10px;
+    }
+
+    h3 {
+      color: #7a493e;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: #4a3d3c;
+    }
+
+    a {
+      color: #9c5a50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #c56a5b;
+    }
+
+    /* --- Hero --- */
+    .hero {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
+      border-radius: 18px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(92%) saturate(1.1);
+      transform: scale(1.03);
+      animation: slowZoom 12s ease-in-out infinite alternate;
+    }
+
+    /* --- Book Card --- */
+    .book-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff8f5;
+      border-radius: 18px;
+      box-shadow: 0 4px 25px rgba(139, 96, 79, 0.1);
+      padding: 28px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+    }
+
+    .book-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .book-image {
+      flex: 0 0 36%;
+      text-align: center;
+    }
+
+    .book-image img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(80, 40, 30, 0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .book-image img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 35px rgba(139, 96, 79, 0.25);
+    }
+
+    .book-content {
+      flex: 0 0 60%;
+    }
+
+    .button-group {
+      margin-top: 16px;
+    }
+
+    .button-group a {
+      background: #b57a6d;
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(139, 96, 79, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .button-group a:hover {
+      background: #c28a7d;
+      transform: translateY(-2px);
+    }
+
+    /* --- Contact --- */
+    #credits {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #826a66;
+    }
+
+    /* --- Motion --- */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slowZoom {
+      from { transform: scale(1.03); }
+      to { transform: scale(1.08); }
+    }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      .book-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .book-image {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        max-height: 300px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+  <div class="site-wrapper">
+    <div class="hero" data-animate>
+      <img src="assets/images/image01.jpg?v=55ac7279" alt="Maggie Shayne" title="Maggie Shayne" />
+    </div>
 
+    <h1 data-animate>Maggie Shayne</h1>
+    <p data-animate style="text-align:center; font-style:italic; font-size:1.1rem;">"Stories that touch the heart, thrill the soul, and linger long after the last page."</p>
+
+    <h2 data-animate>About Maggie</h2>
+    <p data-animate>Maggie Shayne is a New York Times and USA Today bestselling author whose stories of love, mystery, and the supernatural have touched millions of readers. With over 70 novels, she weaves the human experience through magic, passion, and timeless emotion.</p>
+
+    <h2 data-animate>Featured Books</h2>
+
+    <!-- Book 1 -->
+    <div class="book-section" data-animate>
+      <div class="book-image">
+        <img src="assets/images/image02.jpg?v=55ac7279" alt="Twilight Guardians">
+      </div>
+      <div class="book-content">
+        <h3>Twilight Guardians</h3>
+        <p>The first in the Immortal Witch series — where eternal love battles against the dark forces of time.</p>
+        <div class="button-group">
+          <a href="https://www.amazon.sg/Twilight-Guardians-Wings-Night-Reborn/dp/1500762954" target="_blank">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="book-section" data-animate>
+      <div class="book-image">
+        <img src="assets/images/image03.jpg?v=55ac7279" alt="Sleep With the Lights On">
+      </div>
+      <div class="book-content">
+        <h3>Sleep With the Lights On</h3>
+        <p>A haunting story of courage and second chances. A blind woman's world turns upside down when a killer begins to hunt her.</p>
+        <div class="button-group">
+          <a href="https://www.amazon.com/Sleep-Lights-Brown-Luca-Novel-ebook/dp/B00CN0N7LO/" target="_blank">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="book-section" data-animate>
+      <div class="book-image">
+        <img src="assets/images/image04.jpg?v=55ac7279" alt="The Littlest Cowboy">
+      </div>
+      <div class="book-content">
+        <h3>The Littlest Cowboy</h3>
+        <p>A heartwarming tale from the Texas Brand series — family, love, and redemption in the wide open plains.</p>
+        <div class="button-group">
+          <a href="https://www.amazon.com/Littlest-Cowboy-Texas-Brands-Book-ebook/dp/B0B8Q68J9V/" target="_blank">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 data-animate>Follow Maggie</h2>
+    <p data-animate>📧 <strong>Email:</strong> maggieshayne1975@gmail.com</p>
+    <p data-animate>🐦 <strong>Twitter:</strong> <a href="https://x.com/MaggieShayau">@MaggieShayau</a></p>
+    <p data-animate>🌐 <strong>Website:</strong> <a href="https://maggieshayne.carrd.co">maggieshayne.carrd.co</a></p>
+
+    <div id="credits" data-animate>© Maggie Shayne | All Rights Reserved</div>
+  </div>
+
+  <script>
+    // Fade-in on scroll
+    const elements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
 </html>
